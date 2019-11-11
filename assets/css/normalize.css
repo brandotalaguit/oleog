@@ -1,0 +1,4 @@
+table.info>thead>tr>th, table.info>tbody>tr>th, table.info>tfoot>tr>th, table.info>thead>tr>td, table.info>tbody>tr>td, table.info>tfoot>tr>td 
+{
+    border: 0px;
+}

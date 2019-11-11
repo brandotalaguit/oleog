@@ -1,0 +1,123 @@
+/* Add here all your css styles (customizations) */
+
+#color-green	{ color: #72c02c; }
+div.header		{ height: 90px; }
+li.logout		{
+	color: #e74c3c;
+	border-bottom: solid 2px #e74c3c;
+}
+
+.header .navbar-default .navbar-nav > li.logout > a {
+    color: #e74c3c;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.bg-color-green {
+    background-color: #94C16B;
+}
+.navbar-text {
+     margin-top: 0;
+    margin-bottom: 15px;
+}
+
+html, body {
+            height: 100%;
+        }
+
+ .wrapper {
+            min-height: 50%;
+            height: auto !important;
+            height: 100%;
+            margin: 0 auto 0;
+            margin-top: 20px;
+        }
+
+body div.container {
+	padding-top: 20px;
+}
+
+.tech_load .panel-body{
+	padding:0;
+
+}
+.tech_load .panel-default{
+	border:0;
+	border-top:5px solid #e7eaec;
+	padding-left:10px;
+	padding-right:10px;
+}
+.tech_load h2{
+	padding:5px 10px;
+	font-family: verdana;
+}
+.tech_load .jumbotron{
+	padding:30px 0px;
+}
+.tech_load thead th{
+	background-color: #005580;
+	color:#fff;
+	font-family: calibri;
+	text-transform: uppercase;
+	font-size: large;
+	letter-spacing: 1px;
+}
+.tech_load table td{
+	border-top: 1px dotted;
+	font-size: medium;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 8px;
+    line-height: 1.428571429;
+    vertical-align: top;
+}
+.table-striped>tbody>tr:first-child>td, .table-striped>tbody>tr:first-child>th {
+		border-top:0;
+}
+.tech_load .btn-u.btn-brd {
+    border-color: #ddd;
+		color:#2D7396;
+}
+.btn-u.btn-brd.btn-brd-hover:hover {
+    background: #005580;
+}
+.btn-u.btn-brd:hover {
+    color: #5fb611;
+    border-color: #005580;
+}
+
+div.footer
+{
+	background: #262626;
+}
+div.copyright
+{
+	background: #191919;
+}
+
+
+
+#tblgrd .form-control
+{
+	width: 90px;
+}
+
+#tblgrd .uneditable-input
+{
+	font-weight: bold;
+}
+
+#noscript-warning {
+    font-family: sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 101;
+    text-align: center;
+    font-weight: bold;
+    font-size: 120%;
+    color: #fff;
+    background-color: #ae0000;
+    padding: 5px 0 5px 0;
+}
+

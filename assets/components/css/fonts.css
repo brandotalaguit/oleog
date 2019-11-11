@@ -1,0 +1,17 @@
+@font-face{
+  font-family:opensans;
+  src:url("../../components/fonts/OpenSans-Regular.ttf");
+}
+@font-face{
+  font-family:oswald;
+  src:url("../../components/fonts/Oswald-Regular.ttf");
+}
+@font-face{
+  font-family:bebas;
+  src:url("../../components/fonts/BebasNeue.otf");
+}
+
+@font-face{
+  font-family:proxima;
+  src:url("../../components/fonts/proxima-nova-regular.ttf");
+}
