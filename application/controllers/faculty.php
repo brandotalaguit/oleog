@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Faculty extends Admin_Controller {
-	protected $under_grad_date = '2019-04-01';
+	protected $under_grad_date = '2020-04-20';
 	public function __construct()
 	{
 		parent::__construct();
@@ -17,8 +17,8 @@ class Faculty extends Admin_Controller {
 		// $this->data['grad_date_start'] = '2018-03-19';
 		// $this->data['grad_date_end'] = '2018-03-28';
 
-		$this->data['grad_date_start'] = '';
-		$this->data['grad_date_end'] = '';
+		$this->data['grad_date_start'] = '2020-03-30';
+		$this->data['grad_date_end'] = '2020-04-05';
 		$this->data['under_grad_date'] = $this->under_grad_date;
 
 		$faculty_id = $this->session->userdata('faculty_id');

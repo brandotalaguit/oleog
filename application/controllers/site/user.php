@@ -2,7 +2,7 @@
 
 class User extends Admin_Controller {
 
-	public $system_maintenance = FALSE	;
+	public $system_maintenance = TRUE	;
 	public $system_message = "This system is undertaking maintenance";
 
 	public function __construct()
@@ -11,7 +11,7 @@ class User extends Admin_Controller {
 
 		$this->db->join('tblsem', 'tblsem.SemId = tblsysem.SemId', 'LEFT');
 		$this->db->join('tblsy', 'tblsy.SyId = tblsysem.SyId', 'LEFT');
-		$school_yr = $this->db->get_where('tblsysem', array('tblsysem.SyId' => 9, 'tblsysem.SemId' => 1))->row();
+		$school_yr = $this->db->get_where('tblsysem', array('tblsysem.SyId' => 9, 'tblsysem.SemId' => 2))->row();
 		// $school_yr = $this->db->get_where('tblsysem', array('tblsysem.SyId' => 7, 'tblsysem.SemId' => 1))->row();
 		// $school_yr = $this->db->get_where('tblsysem', array('IsPreviousSem' => 1))->row();
 		// $school_yr = $this->db->get_where('tblsysem', array('IsCurrentSem' => 1))->row();
@@ -30,8 +30,8 @@ class User extends Admin_Controller {
 			'EogLateDate' => date('Y-m-d H:i:s', strtotime($school_yr->EogLateDate)),
 			'EogGradLateDate' => date('Y-m-d H:i:s', strtotime($school_yr->EogGradLateDate)),
 		);
-		// if ( $this->input->ip_address() == "203.177.57.155") 
-			// $this->system_maintenance = FALSE;
+		if ( in_array($this->input->ip_address(), ["203.177.57.155", "130.105.186.250"]))
+			$this->system_maintenance = FALSE;
 
 		$maintenance = array(
 								"system_maintenance" =>$this->system_maintenance,

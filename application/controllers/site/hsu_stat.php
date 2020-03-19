@@ -19,7 +19,7 @@ class Hsu_stat extends Admin_Controller {
 		$faculty = $this->user_m->get_by(array('faculty_id' => $this->session->userdata('faculty_id')), TRUE);
 		$this->data['college'] = $this->db->get_where('tblcollege', array('CollegeId' => $faculty->CollegeId))->row();
 
-		$param = array('SemId' => 1, 'SyId' => 9, 'C.CollegeId' => $faculty->CollegeId);
+		$param = array('SemId' => 2, 'SyId' => 9, 'C.CollegeId' => $faculty->CollegeId);
 
 		$college = $this->studgrade_stat_m->faculty_encoding_statistics($param);
 		$hsu = $this->studgrade_stat_hsu_m->faculty_encoding_statistics($param);

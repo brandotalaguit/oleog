@@ -3,12 +3,12 @@
 class Gradebook extends Admin_Controller {
 
 	protected $special_grades = array(6 => array('INCOMPLETE', 'INC'), 7 => array('UNOFFICIALLY DROPPED', 'UD'), 5 => array('FAILED','5.00'));
-	protected $grad_date_start = '2019-03-18';
+	protected $grad_date_start = '2020-03-30';
 	// protected $grad_date_end = '2019-03-22';
-	protected $grad_date_end = '2019-03-25';
+	protected $grad_date_end = '2020-04-05';
 	protected $undergraduate = TRUE;
 	protected $allow_blank_grades = FALSE;
-	protected $under_grad_date = '2019-04-01';
+	protected $under_grad_date = '2020-04-20';
 
 	/*
 	* Sched Id's allowed to be grade
@@ -938,7 +938,7 @@ class Gradebook extends Admin_Controller {
 
 	public function confirm_graduate_grades($sched_id)
 	{
-		$this->output->enable_profiler(TRUE);
+		// $this->output->enable_profiler(TRUE);
 		$sched_id = intval($sched_id);
 
 		if ( ! $sched_id)

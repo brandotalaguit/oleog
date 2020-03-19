@@ -6,9 +6,14 @@
  ?>
 
 <noscript>
-  <div id="noscript-warning">No Javascript Detected.This site will not work Properly wihout Javascript. To Enable your Javascript Please follow this <a href="http://www.wikihow.com/Turn-on-Javascript-in-Internet-Browsers">Link</a>  </div>
+  <div id="noscript-warning">No Javascript Detected.This site will not work Properly wihout Javascript. To Enable your Javascript Please follow this <a href="https://www.wikihow.com/Turn-on-Javascript-in-Internet-Browsers">Link</a>  </div>
 </noscript>
-
+<style type="text/css">
+    .dateRed
+    {
+        color:#a50909;
+    }
+</style>
 
 
 <div class="container">
@@ -38,7 +43,7 @@
                       <div class="item">
                         <img src="<?php echo base_url('/assets/images/step2.jpg') ?>" style="width:100%;">
                       </div>
-                    
+
                       <div class="item">
                         <img src="<?php echo base_url('/assets/images/step3.jpg') ?>"  style="width:100%;">
                       </div>
@@ -61,12 +66,16 @@
             </div>
             <div  style="margin:20px auto;">
                 <hr style="margin:0px;">
-                <h4> Encoding of Grades Schedule from <b style="color:#a50909;">
-                    November 11, 2019 to November 15, 2019
-                </b>
-                <br>    The Releasing of Grades Schedule is from  <b style="color:#a50909;">November 18, 2019 to November 20, 2019</b> (HSU & Tertiary)   
-                </h4>
-                    
+                <h5> Encoding of Final Grades (Graduating)
+                    <b class="dateRed">March 30-31, 2020 (Mon-Tue)</b>
+                <br> Continuation of Encoding of Final Grades (Graduating)
+                    <b class="dateRed">April 01, 2020 (Wed)</b>
+                <br> Encoding of Final Grades for HSU Grade 12
+                    <b class="dateRed">April 02-04, 2020 (Thur-Sat)</b>
+                <br> Encoding of Final Grades (Non-Graduating-Tertiary & Grade 11)
+                    <b class="dateRed">April 20-24, 2020 (Mon-Fri)</b>
+                </h5>
+
             </div>
         </div>
     </div>
@@ -92,37 +101,6 @@
                             <!-- <small>(HSU and COLLEGE)</small> -->
                         </h3>
                         <div style="color:red; font-weight:bold;" class="text-center">
-                            <!-- <p><strong>Schedules</strong></p> -->
-                        <?php
-                           // $late_date = date('Y-m-d', strtotime($this->session->userdata('EogLateDate')));
-                            //$first_date = date('F j, Y', strtotime($this->session->userdata('date_start')));
-                            // $last_date = date('F j, Y', strtotime('-1 day', strtotime($this->session->userdata('date_end'))));
-                            //echo $first_date . ' to ' . $last_date;
-                             // echo "March 19, 2018 to March 21, 2018 <br>(Graduating Students)
-                             //        <br>April 02, 2018 to April 06, 2018 <br>(Non-Graduating Students)";
-                           // echo "<em><u>HSU - April 2, 2018 to April 4, 2018</u></em>";
-                            //echo "<br>College - April 2, 2018 to April 9, 2018";
-                       // echo "March 18, 2019 to March 20, 2019 (Graduating Students) <br>March 20, 2019 to March 22, 2019 <br>(HSU for Grade 12)";
-                        ?>
-                       <!--  June 11, 2019 to June 25, 2019 <br>(College taking a Summer classes)<br>
-                        June 14, 2019 to June 16, 2019 (SOL taking a 2nd Semester classes)    -->
-
-                            <!-- <br>( -->
-                           <?php //if (date('Y-m-d') == '2017-03-18' || date('Y-m-d') == '2017-03-19'): ?>
-                            <!-- 12:01 am to 11:00 pm -->
-                            <!-- until 11:00 PM -->
-                           <?php // else: ?>
-                            <?php // echo date('h:i a', strtotime($this->session->userdata('time_start'))) ?> 
-                            <!-- to  -->
-                            <?php //echo date('h:i a', strtotime($this->session->userdata('time_end')))
-                                // echo date('h:i a', strtotime("22:00:00"))
-                             ?>
-
-                           <?php// endif ?>
-                           
-                           <!--  07:00 AM to 11:59 PM
-                            )
- -->
                         <?php if ($this->session->userdata('system_maintenance')): ?>
                             <?php echo $this->session->userdata('message') ?>
                         <?php endif ?>
@@ -136,7 +114,7 @@
                 </div>
 
                 <?php if ($this->session->flashdata('error')): ?>
-                    <div class="row margin-bottom-5">
+                    <!-- <div class="row margin-bottom-5"> -->
                         <div class="alert alert-danger alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                 <h5>The following errors have occurred</h5>
@@ -152,7 +130,7 @@
 
                                 </div>
                         </div>
-                    </div>
+                    <!-- </div> -->
                 <?php endif ?>
 
                 <?php if (validation_errors()): ?>

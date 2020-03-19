@@ -4,11 +4,11 @@ class Hsu extends Admin_Controller {
 
 	protected $sched_ids = [16238,16426,16635,16680,16908,17704,18012,18270,18306,18458,18567];
 	protected $allow_blank_grades = FALSE;
-	protected $grad_date_start = '2019-03-18';
+	protected $grad_date_start = '2020-03-30';
 	// protected $grad_date_end = '2019-03-22';
-	protected $grad_date_end = '2019-03-25';
+	protected $grad_date_end = '2010-04-05';
 	protected $undergraduate = TRUE;
-	protected $under_grad_date = '2019-04-01';
+	protected $under_grad_date = '2020-04-20';
 
 	public function __construct()
 	{
