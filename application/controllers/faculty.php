@@ -11,14 +11,14 @@ class Faculty extends Admin_Controller {
 
 	public function index()
 	{
-		// $this->output->enable_profiler(TRUE);
+		$this->output->enable_profiler(FALSE);
 
 		$this->data['date_now'] = date('Y-m-d');
 		// $this->data['grad_date_start'] = '2018-03-19';
 		// $this->data['grad_date_end'] = '2018-03-28';
 
-		$this->data['grad_date_start'] = '2019-03-18';
-		$this->data['grad_date_end'] = '2019-03-28';
+		$this->data['grad_date_start'] = '';
+		$this->data['grad_date_end'] = '';
 		$this->data['under_grad_date'] = $this->under_grad_date;
 
 		$faculty_id = $this->session->userdata('faculty_id');

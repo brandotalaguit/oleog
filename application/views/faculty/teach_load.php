@@ -55,9 +55,9 @@
         </div><!-- col-md-5 -->
         <div class="clearfix"></div>
         <?php if ($this->studgrade_m->get_pe_subjects() == TRUE): ?>
-          <div class="alert alert-success">
+          <div class="alert alert-info ">
             <h3 style="margin:0">NOTE:</h3>
-                <p style="margin-left:28px; ">Students with Non-board Program who has <b>PE 1</b> subject will have the same grade on <b>PE 2</b>, Two separate grade sheet will have be provided for this case.</p>
+                <p style="margin-left:28px; font-size: 20px; ">Students with Non-board Program who has <b>PE 1</b> subject will have the same grade on <b>PE 2</b>, Two separate grade sheet will have be provided for this case.</p>
           </div>
         <?php endif ?>
       </div>
@@ -90,6 +90,7 @@
                 </thead>
                 <tbody>
                   <?php foreach ($teach_load as $load): ?>
+                    <?php //dump($load) ?>
                   <tr <?php echo is_graded($load->is_graded) ?> >
                     <td><?php echo $load->cfn ?></td>
                     <td><?php echo $load->CourseCode ?></td>
@@ -100,13 +101,18 @@
                       <?php
                         if ($load->is_graded == 0)
                         {
+                          // dump($load->eogSchedId != NULL);
+                          // dump($load->eogSchedId);
                           if ($load->IsGradSection)
                           {
                             echo '<span class="label label-default">Done Encoding for Graduating Students</span>';
                           }
                           else
                           {
-                            echo '<span class="label label-success">Encode Grades</span>';
+                            if ($load->eogSchedId != NULL) 
+                              echo '<span class="label label-warning">Encoding In Progress</span>';
+                            else
+                              echo '<span class="label label-success">Encode Grades</span>';
                           }
                         }
                         else
@@ -114,17 +120,28 @@
                           $last_encode_date = substr($load->submitted_at, 0, 10);
                           if ($load->is_graded == 1 && $load->is_printed == 0 && $load->uds > 0 && (($last_encode_date >= $grad_date_start && $last_encode_date <= $grad_date_end) OR $load->leclab == 6))
                           {
-                            echo '<span class="label label-success">Encode Grades</span>';
+                              if ($load->eogSchedId != NULL) 
+                                echo '<span class="label label-warning">Encoding In Progress</span>';
+                              else
+                                echo '<span class="label label-success">Encode Grades</span>';
                           }
                           else
                           {
                             if ($load->uds > 0 && $load->is_printed == 0 && $last_encode_date < $under_grad_date)
-                            echo '<span class="label label-success">Encode Grades</span>';
+                            {
+                              if ($load->eogSchedId != NULL) 
+                                echo '<span class="label label-warning">Encoding In Progress</span>';
+                              else
+                                echo '<span class="label label-success">Encode Grades</span>';
+                            }
                             else
                             {
                               if ($last_encode_date < $under_grad_date)
                               {
-                                echo '<span class="label label-success">Encode Grades</span>';
+                                if ($load->eogSchedId != NULL) 
+                                  echo '<span class="label label-warning">Encoding In Progress</span>';
+                                else
+                                  echo '<span class="label label-success">Encode Grades</span>';
                               }
                               else
                               {

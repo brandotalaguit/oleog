@@ -31,14 +31,14 @@
               <?php else: ?>
               <?php
                   $last_encode_date = substr($load->submitted_at, 0, 10);
-                  if ($last_encode_date < $under_grad_date)
-                  {
-                    echo '<span class="label label-success">Encode Grade</span>';
-                  }
-                  else
-                  {
+                  // if ($last_encode_date < $under_grad_date)
+                  // {
+                  //   echo '<span class="label label-success">Encode Grade</span>';
+                  // }
+                  // else
+                  // {
                     echo '<span class="label label-default">Done</span>';
-                  }
+                  // }
                ?>
               <?php endif ?>
 
@@ -50,21 +50,21 @@
                     if ($load->CourseCode != 'RHGP')
                     {
                       // dump($last_encode_date);
-                      if ($load->uds > 0 && ($last_encode_date >= $grad_date_start && $last_encode_date <= $grad_date_end))
-                      {
-                        echo anchor(base_url('hsu/' . $load->sched_id . '/gradesheet'), '<i class="fa fa-pencil"></i> Re-Encode', array('class' => 'btn btn-primary'));
-                      }
-                      else
-                      {
-                        if ($last_encode_date < $under_grad_date)
-                        {
-                          echo anchor(base_url('hsu/' . $load->sched_id . '/gradesheet'), '<i class="fa fa-pencil"></i> Re-Encode', array('class' => 'btn btn-primary'));
-                        }
-                        else
-                        {
-                          echo anchor(base_url('hsu/' . $load->sched_id . '/print_gradesheet'), '<i class="fa fa-print"></i> Draft Copy0', array('class' => 'btn btn-default', 'target' => '_blank'));
-                        }
-                      }
+                      // if ($load->uds > 0 && ($last_encode_date >= $grad_date_start && $last_encode_date <= $grad_date_end))
+                      // {
+                      //   echo anchor(base_url('hsu/' . $load->sched_id . '/gradesheet'), '<i class="fa fa-pencil"></i> Re-Encode', array('class' => 'btn btn-primary'));
+                      // }
+                      // else
+                      // {
+                        // if ($last_encode_date < $under_grad_date)
+                        // {
+                        //   echo anchor(base_url('hsu/' . $load->sched_id . '/gradesheet'), '<i class="fa fa-pencil"></i> Re-Encode', array('class' => 'btn btn-primary'));
+                        // }
+                        // else
+                        // {
+                          echo anchor(base_url('hsu/' . $load->sched_id . '/print_gradesheet'), '<i class="fa fa-print"></i> Draft Copy', array('class' => 'btn btn-default', 'target' => '_blank'));
+                        // }
+                      // }
                     }
                     else
                     {

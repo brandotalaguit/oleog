@@ -52,13 +52,17 @@
 				<?php echo anchor('site/stat/download_data', 'Download Data', array('class' => 'btn-link label label-primary hidden-print', 'target' => '_blank')); ?>
 				</p>
 			</div>
-			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-				<strong>GRADUATING SECTION</strong>
-				<p>
-				<?php echo anchor('site/stat/late_encode_graduating_section', 'View Late Encoding', array('class' => 'btn-link label label-primary hidden-print', 'target' => '_blank')); ?>
-				<?php echo anchor('site/stat/not_encoded_graduating_section', 'View Not Yet Encoded', array('class' => 'btn-link label label-primary hidden-print', 'target' => '_blank')); ?>
-				</p>
-			</div>
+
+				<?php if ($this->session->userdata('sem_id') == 2): ?>
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+						<strong>GRADUATING SECTION</strong>
+						<p>
+						<?php echo anchor('site/stat/late_encode_graduating_section', 'View Late Encoding', array('class' => 'btn-link label label-primary hidden-print', 'target' => '_blank')); ?>
+						<?php echo anchor('site/stat/not_encoded_graduating_section', 'View Not Yet Encoded', array('class' => 'btn-link label label-primary hidden-print', 'target' => '_blank')); ?>
+						</p>
+					</div>
+				<?php endif ?>
+
 			<?php endif ?>
 		</div>
 	</div>

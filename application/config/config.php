@@ -1,16 +1,16 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-// function __autoload($classname)
-// {
-// 	if (strpos($classname, 'CI_') !== 0)
-// 	{
-// 		$file = APPPATH . 'libraries/' . $classname . '.php';
-// 		if (file_exists($file) && is_file($file))
-// 		{
-// 			@include_once($file);
-// 		}
-// 	}
-// }
+function __autoload($classname)
+{
+	if (strpos($classname, 'CI_') !== 0)
+	{
+		$file = APPPATH . 'libraries/' . $classname . '.php';
+		if (file_exists($file) && is_file($file))
+		{
+			@include_once($file);
+		}
+	}
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -40,8 +40,8 @@
 // if (ENVIRONMENT == 'production')
 // $config['base_url'] = 'https://umak.edu.ph/xx1-oleog/';
 // $config['base_url'] = 'https://umak.edu.ph/xxoleog/';
-// $config['base_url'] = 'https://umak.edu.ph/oleog/';
-$config['base_url'] = 'http://local.umak.edu.ph/oleog/';
+$config['base_url'] = 'https://umak.edu.ph/oleog/';
+// $config['base_url'] = 'http://local.umak.edu.ph/oleog/';
 
 // $config['base_url'] = 'https://umak.edu.ph/xx-oleog/';
 

@@ -1,31 +1,38 @@
 <!--Modal Help -->
-<div id="help" class="modal fade bs-example-modal-lg" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-dialog modal-lg">
+<div id="help" class="modal fade bs-example-modal-lg modal-manual" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" style="font-size: 17px;">
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="text-center">ENCODING OF GRADES(EOG) Manual</h3>
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-7">
               <p class="text-justify">1. Login at <b class="text-primary">https://umak.edu.ph/oleog</b> using the designated password provided by ITC.</p>
               <p class="text-justify" class="text-justify">2. You will then be forwarded to your profile along with the load of your courses for the current semester. To start encoding, just click on the <button class="btn btn-primary">ENCODE</button> button under the action column.</p>
               <p class="text-justify">3. Check the courses and number of students shown in the roster for encoding. If there are missing or additional courses/students you wish to clarify, inquire with the Registrar’s Office before continuing. You can save the draft of encoded grades if you wish to continue at a later time.</p>
-              <div class="col-sm-7" style="padding-left: 5px; padding-right: 5px; ">
+              <div class="col-sm-12" style="padding-left: 5px; padding-right: 5px; ">
                 <div class="alert alert-info">
-                  <p class="text-center"><strong>COLLEGE</strong></p>
-                      <p class="text-center">To encode:</p>
-                      <b class="text-warning text-center">UD</b> – press 7(Default Grade)<br>
-                      <b class="text-primary text-center">INC</b> – press 6 <b class="text-danger">FAILED</b> – press 5 
+                  <p class="text-center"><h2 style="margin-top: 0;"><strong>COLLEGE</strong></h2></p>
+                      <p class="lead">To encode:</p>
+                      <h3>
+                        <label class="label  label-primary"></label>
+                        <b class="text-warning text-center">UD</b> – Press 7<br>
+                        <b class="text-primary text-center">INC</b> – Press 6 <br>
+                        <b class="text-danger">FAILED</b> – Press 5 <br>
+                        
                       <p >You may encode the average grade , the system will automatically convert to the college grading system.(1.0 – 5.0)</p>                
+                      </h3>
                 </div>
               </div>
-              <div class="col-sm-5">
+              <div class="col-sm-12">
                 <div class="alert alert-info">
-                  <p class="text-center"><strong>HSU</strong></p>
-                    <p class=" text-center">To encode:</p>
+                  <p class="text-center"><h2 style="margin-top: 0;"><strong>HSU</strong></h2></p>
+                    <p class="lead" class=" text-center">To encode:</p>
+                    <h3>
                         <b class="text-success text-center">PASSED</b> – type whole numbers from 75 to 100 <br>
                         <b class="text-danger  text-center">FAILED</b> – type 70 to 74
+                    </h3>
                 </div>
               </div>
               <div class="col-md-12">
@@ -33,7 +40,7 @@
                 <p>5. You can print a draft of the final grades once. Final Grade sheets will be printed at the Registrar’s Office and forwarded to the respective Deans of each college for signature.</p>
               </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-5">
               <div class="alert alert-info">
                 <p>Please be informed that <b>NEW GRADING SYSTEM</b> is applied for new students belongs to <b>First Semester, Academic Year 2016-2017</b> Approved by the University Council. (Those who  belong to earlier Academic Year will be still the <b>OLD GRADING SYSTEM</b>.)</p>
               </div>

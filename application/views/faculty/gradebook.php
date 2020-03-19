@@ -60,7 +60,7 @@
 		</div><!-- row -->
 	</div><!-- course-information -->
 
-	<div class="alert alert-success callout" style="margin-bottom:10px;">
+	<div class="alert alert-info callout" style="margin-bottom:10px;">
 		<p>Student with <code>COR NOT PRINTED</code> beside the name of your student are student who did not print their COR's yet included in Encoding of Grades as long as they made their Payment.</p>
 		<p>Students who did print their COR are student included in classlist, please advise your student to print their COR.</p>
 		<hr>
@@ -161,8 +161,8 @@
 
 <div class="row-fluid">
 	
-	<div class="alert alert-error" style="margin-bottom:0px;">
-		<h3>WARNING: </h3>
+	<div class="alert alert-info" style="margin:10px 0; font-size: 17px;">
+		<h3 style="margin-top: 5px;">Reminders: </h3>
 		<!-- Clicking <strong>SAVE</strong> button will save these data and cannot be edited without undergoing amendments of grade's procedure. -->
 		Missing students in the grading system should be verified and corrected by the Registrar's Office <strong>BEFORE SAVING ANY OF THIS DATA.</strong>
 		Any more changes to the grades after saving would have to undergo the process of "<strong>AMENDMENT OF GRADES</strong>".
@@ -173,9 +173,9 @@
 		<form method="post" id="frmGrd" autocomplete="off">
 <div class="form-actions">
 	<div class="pull-right">
-        <?php echo anchor(base_url('gradebook/'.$schedule->sched_id.'/finish_later'), '<strong>Finish Later</strong>', array('class' => 'btn btn-large btn-warning', 'style' => 'margin-right: 20px;')); ?>
+        <?php echo anchor(base_url('gradebook/'.$schedule->sched_id.'/finish_later'), '<strong>Finish Later</strong>', array('class' => 'btn btn-large btn-lg btn-warning', 'style' => 'margin-right: 20px;')); ?>
         <!-- button id="btnSendGrad" type="button" tabindex="<?php echo $ctr+1; ?>" class="btn btn-large btn-primary"> <strong>SAVE GRADUATING STUDENTS</strong></button> -->
-		<button id="btnSend" type="button" tabindex="<?php echo $ctr+1; ?>" class="btn btn-large btn-primary">I understand and accept the reminder and warning stated above. <strong>SAVE FINAL DATA</strong></button>
+		<button id="btnSend" type="button" tabindex="<?php echo $ctr+1; ?>" class="btn btn-large btn-lg btn-primary">I understand and accept the reminders stated above. <strong>SAVE FINAL DATA</strong></button>
 	</div>
 </div>
 		</form>

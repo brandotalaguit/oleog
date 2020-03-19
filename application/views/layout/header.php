@@ -32,10 +32,13 @@
           <li><a href="<?php echo base_url('site/stat'); ?>"><i class="fa fa-users"></i> Faculty</a></li>
           <li><a href="<?php echo base_url('faculty'); ?>"><i class="fa fa-database"></i> Teaching Load</a></li>
           <?php endif ?>
-          <li><a href="#" data-target="#youtubeprocedure" data-toggle="modal" ><i class="fa fa-youtube"></i> Tutorial</a></li>
+          <li><a href="#" data-target="#youtubeprocedure" data-toggle="modal" >
+            <i class="fa fa-clipboard"></i>
+            <!-- <i class="fa fa-youtube"></i> -->
+           Tutorial</a></li>
           <li class="btn-success"><a href="#" data-target="#help" data-toggle="modal" ><i class="fa fa-question-circle"></i> MANUAL</a></li>
           <?php if ($this->session->userdata('faculty_id')): ?>
-          <li class="btn-danger"><a href="<?php echo base_url('site/user/logout') ?>" style="color:#fff"><i class="fa fa-power-off"></i> Log Out</a></li>
+          <li class="btn-danger"><a href="<?php echo base_url('site/user/logout') ?>" style="color:#fff"  data-toggle="tooltip" data-placement="bottom" title="Log Out"><i class="fa fa-power-off"></i></a></li>
           <?php else: ?>
           <li class="btn-danger"><a href="<?php echo base_url('site/user/admin_logout') ?>" style="color:#fff"><i class="fa fa-power-off"></i> Log Out</a></li>
           <?php endif ?>

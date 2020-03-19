@@ -66,7 +66,7 @@ class User_M extends MY_Model
 			{
 				$this->db->join('tblsem', 'tblsem.SemId = tblsysem.SemId', 'LEFT');
 				$this->db->join('tblsy', 'tblsy.SyId = tblsysem.SyId', 'LEFT');
-				$school_yr = $this->db->get_where('tblsysem', array('tblsysem.SyId' => 8, 'tblsysem.SemId' => 2))->row();
+				$school_yr = $this->db->get_where('tblsysem', array('tblsysem.SyId' => 9, 'tblsysem.SemId' => 1))->row();
 
 				$sysem = array(
 					'sem_id' => $school_yr->SemId,

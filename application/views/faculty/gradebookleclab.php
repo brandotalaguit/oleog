@@ -120,7 +120,7 @@
 		?>
 
 						<tr>
-							<td width="3%" style="text-align:center"><?php echo $ctr; ?></td>
+							<td width="3%" style="text-align:center"><?php echo $ctr = $ctr - 1; ?></td>
 							<td width="20%"><?php echo $row->Lname .", ".$row->Fname." ".$row->Mname;?></td>
 						  <td width="5%">
 								<?php echo $row->StudNo;?>

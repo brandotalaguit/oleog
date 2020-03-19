@@ -74,9 +74,9 @@ class Gradebook extends Admin_Controller {
 			$date_end = $date_now;
 		}
 
-		if ($this->CollegeId == 21) {
-			$date_end = $date_now;
-		}
+		// if ($this->CollegeId == 21) {
+		// 	$date_end = $date_now;
+		// }
 
 		if (in_array($this->session->userdata('faculty_id'), $this->faculty_id)) {
 			$date_end = $date_now;
@@ -390,6 +390,13 @@ class Gradebook extends Admin_Controller {
 				$c_code2 = 'info';
 			}
 
+			elseif ($_POST['StrLab']=="" || $_POST['StrGrade']=="" )
+			{
+				$_POST['Remarks']="";
+				$c_code = 'label label-info';
+				$c_code2 = 'info';
+			}
+
 			$tmpLab = '';
 			$tmpLabStr = '';
 			if (nf($_POST['LabGrade']) != 0)
@@ -519,7 +526,7 @@ class Gradebook extends Admin_Controller {
 			return TRUE;
 		}
 
-		$this->form_validation->set_message('_20162017_grade_rule', "THE GRADE YOU ENTERED $grade IS NOT ALLOWED");
+		$this->form_validation->set_message('_20162017_grade_rule', "THE GRADE YOU ENTERED {$this->input->post($input, TRUE)} IS NOT ALLOWED");
 		$GLOBALS['flagLab']=TRUE;
 		$GLOBALS['flagGrade']=FALSE;
 		return FALSE;
@@ -841,7 +848,7 @@ class Gradebook extends Admin_Controller {
 		$trans = $this->studgrade_trans_m->get_by(array('tblsched.sched_id' => $sched_id), TRUE);
 
 		if ( ! count($trans))
-		parent::load_error('Operation is not allowed. System detected that you have not graded atleast one of your student(s).');
+		parent::load_error('NOTE: System detected that you have not graded atleast one of your student(s).');
 
 		$trans_id = $trans->eog_trans_id;
 
@@ -862,7 +869,7 @@ class Gradebook extends Admin_Controller {
 				{
 					$this->user_m->logs('Failed to finalized Due to BLANK GRADES CFN - ' . $teacher_program['schedule']->cfn . ' Sched Id - ' . $sched_id);
 					$url = "gradebook/{$sched_id}/gradesheet";
-					parent::load_error('Operation Failed. Gradesheet cannot be finalized due to blank grade(s)', $url);
+					parent::load_error('NOTE: Gradesheet cannot be finalized due to blank grade(s)', $url);
 				}
 			}
 		}

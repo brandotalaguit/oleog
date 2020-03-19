@@ -18,7 +18,7 @@ class Stat extends Admin_Controller {
 		$faculty = $this->user_m->get_by(array('faculty_id' => $this->session->userdata('faculty_id')), TRUE);
 		$this->data['college'] = $this->db->get_where('tblcollege', array('CollegeId' => $faculty->CollegeId))->row();
 
-		$param = array('SemId' => 2, 'SyId' => 8, 'C.CollegeId' => $faculty->CollegeId);
+		$param = array('SemId' => 1, 'SyId' => 9, 'C.CollegeId' => $faculty->CollegeId);
 
 		// $college = $this->studgrade_stat_m->faculty_encoding_statistics($param);
 		// $hsu = $this->studgrade_stat_hsu_m->get_by($param);
@@ -97,6 +97,7 @@ class Stat extends Admin_Controller {
 
 		// $this->db->where('submitted_at <= ', $late_date);
 		$this->db->where("submitted_at BETWEEN '{$first_date}' AND '{$last_date}'", NULL, FALSE);
+		// $this->db->where('! (submitted_at = 0 || submitted_at IS NULL)', NULL, FALSE);
 		$this->data['courses'] = $this->studgrade_stat_m->get_course($sy_id, $sem_id);
 		$this->data['title'] = 'List of courses who encoded their grades on-time';
 
@@ -145,7 +146,7 @@ class Stat extends Admin_Controller {
 
 	public function summary()
 	{
-		$this->output->enable_profiler(TRUE);
+		$this->output->enable_profiler(FALSE);
 		// dump($this->session->all_userdata());
 
 		$sy_id = $this->session->userdata('sy_id');
@@ -268,7 +269,7 @@ class Stat extends Admin_Controller {
 		$sem_id = $this->session->userdata('sem_id');
 		$sy_id = $this->session->userdata('sy_id');
 
-		$sql_statement = "SELECT C.CollegeId, CollegeCode, CollegeDesc, cfn, CourseCode, REPLACE(CourseDesc, ',', '') as CourseDesc, year_section, concat(Lastname, ' ', Firstname, ' ', Middlename) FacultyName, B.faculty_id, Lastname, Firstname, Middlename, DateSaveGradSection, submitted_at, remark, (SELECT COUNT(F.StudNo)
+		$sql_statement = "SELECT C.CollegeId, CollegeCode, CollegeDesc, cfn, CourseCode, REPLACE(CourseDesc, ',', '') as CourseDesc, year_section, concat(Lastname, ' ', Firstname, ' ', Middlename) FacultyName, B.faculty_id, Lastname, Firstname, Middlename, regis_date_print, returned_date, DateSaveGradSection, submitted_at, remark, (SELECT COUNT(F.StudNo)
 			    FROM
 			        tblstudentschedule AS F
 			            LEFT JOIN

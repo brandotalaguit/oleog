@@ -2,14 +2,16 @@
 <html>
 <head>
 	<title>University of Makati(Information Technology Center) - Grade Sheet <?php  ?></title>
-	
+
 	<!-- Meta -->
 	<meta charset="utf-8">
+	<meta name="robots" content="noindex">
+	<meta name="googlebot" content="noindex">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="<?php echo config_item('site_description') ?>">
 	<meta name="author" content="<?php echo config_item('site_author0') ?>">
 	<meta name="author" content="<?php echo config_item('site_author1') ?>">
-	
+
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="<?php echo base_url('assets/img/ico/favicon.ico') ?>">
 
@@ -34,7 +36,7 @@
 <div class="print">
 <?php for ($page=1; $page <= $report['pages'] ; $page++) : ?>
 		<div class="container">
-			
+
 			<!-- gradesheet header -->
 			<div class="row">
 				<div class="col-xs-12">
@@ -52,7 +54,7 @@
 								<td colspan="3"><h5><b><?php echo $schedule->CourseCode;?></b></h5></td>
 								<td width=""></td>
 								<td width="" ><h5><b class="printhide">Course File Number: </b><b><?php echo $schedule->cfn;?></b></h5></td>
-								
+
 							</tr>
 							<!-- <tr>
 								<td colspan="6" height="15px;">&nbsp;</td>
@@ -64,7 +66,7 @@
 							<tr>
 								<td style="padding-left: 20px;" width=""><h5><b class="printhide">Faculty: </b></h5></td>
 								<td colspan="4"><h5><b><?php echo 'Prof. '.$schedule->Title . ' ' . $schedule->Lastname . ', ' . $schedule->Firstname . ' ' . $schedule->Middlename; ?></b></h5></td>
-								
+
 								<td width=""><b class="printhide"><h5><b class="printhide">Units: </b><b><?php echo $schedule->Units;?></b></h5></td>
 							</tr>
 							<!-- <tr>
@@ -86,15 +88,15 @@
 				<div>
 				<hr>
 				</div>
-				<!-- end col xs 12 -->		
+				<!-- end col xs 12 -->
 			</div>
 			<!-- end gradesheet header -->
 
 			<!-- gradesheet -->
 			<div class="row">
-				
+
 				<?php if ($report['col1'] == 1): ?>
-					
+
 						<!-- first column -->
 						<div class="col-xs-6 lefttab">
 							<table class="table table-bordered table-condensed" id="tblCol1">
@@ -105,7 +107,7 @@
 										<?php if ($schedule->leclab == 1): ?>
 										<th width="20px" class="text-center">Lec.</th>
 										<th width="20px" class="text-center">Lab.</th>
-										<?php else: ?>											
+										<?php else: ?>
 										<th width="20px" class="text-center">Grade</th>
 										<?php endif ?>
 										<th width="40px" class="text-center">Remarks</th>
@@ -148,7 +150,7 @@
 
 				<?php if ($report['col2'] == 1 && (!empty($grades[$report['row']+1]))): ?>
 
-					
+
 						<!-- second column -->
 						<div class="col-xs-6 righttab">
 						<table class="table table-bordered table-condensed" id="tblCol2">
@@ -159,7 +161,7 @@
 									<?php if ($schedule->leclab == 1): ?>
 									<th width="20px" class="text-center">Lec.</th>
 									<th width="20px" class="text-center">Lab.</th>
-									<?php else: ?>											
+									<?php else: ?>
 									<th width="20px" class="text-center">Grade</th>
 									<?php endif ?>
 									<th width="40px" class="text-center">Remarks</th>
@@ -168,8 +170,8 @@
 							<tbody>
 									<?php for ($cnt = $report['row'], $row_cnt = 0; ($row_cnt <= $report['row_limit']) && ($report['row'] <= $report['total_row']); $cnt++, $report['row']++, $row_cnt++): ?>
 										<?php if (!empty($grades[$report['row']])): ?>
-											<?php 
-												$grade = $grades[$report['row']]; 
+											<?php
+												$grade = $grades[$report['row']];
 												?>
 											<tr>
 												<td><b><?php echo ($report['row'] != $report['total_row']) ? ($report['row']+1) : "&nbsp;"; ?></b></td>
@@ -221,7 +223,7 @@
 					</p>
 				</div>
 				<div class="clearfix"></div>
-				
+
 				<div class="col-xs-4 text-center">
 					<?php echo date_convert_to_php($trans->submitted_at, "M d, Y H:i:s"); ?><br>
 					<p class="underline">
@@ -257,8 +259,8 @@
       <div class="modal-body">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>       
-      </div>       
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
     </div>
   </div>
 </div>

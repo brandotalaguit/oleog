@@ -14,31 +14,59 @@
 <div class="container">
     <div class="col-md-8">
         <div class="col-md-12 vidlog">
+            <p class="pull-right" style="margin-top: 7px;"><?php echo $this->session->userdata('sem_desc').', A.Y. '.$this->session->userdata('sy_desc'); ?></p>
             <h4>ONLINE ENCODING OF GRADES</h4>
-            <p><?php echo $this->session->userdata('sem_desc').', A.Y. '.$this->session->userdata('sy_desc'); ?></p>
-            <hr style="margin: 15px 0 20px 0;">
+            <hr style="margin: 15px 0 8px 0;">
             <div class="responsive-video">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/MK4Dc6_gTuY?rel=0&amp;showinfo=0"></iframe>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#myCarousel" data-slide-to="1"></li>
+                      <li data-target="#myCarousel" data-slide-to="2"></li>
+                      <li data-target="#myCarousel" data-slide-to="3"></li>
+                      <li data-target="#myCarousel" data-slide-to="4"></li>
+                      <!-- <li data-target="#myCarousel" data-slide-to="5"></li> -->
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                      <div class="item active">
+                        <img src="<?php echo base_url('/assets/images/step1.jpg') ?>"  style="width:100%;">
+                      </div>
+
+                      <div class="item">
+                        <img src="<?php echo base_url('/assets/images/step2.jpg') ?>" style="width:100%;">
+                      </div>
+                    
+                      <div class="item">
+                        <img src="<?php echo base_url('/assets/images/step3.jpg') ?>"  style="width:100%;">
+                      </div>
+                      <div class="item">
+                        <img src="<?php echo base_url('/assets/images/step4.jpg') ?>"  style="width:100%;">
+                      </div>
+                      <div class="item">
+                        <img src="<?php echo base_url('/assets/images/step5.jpg') ?>"  style="width:100%;">
+                      </div>
+                    </div>
+                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                          <span class="icon-prev" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                          <span class="icon-next" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
                 </div>
             </div>
             <div  style="margin:20px auto;">
                 <hr style="margin:0px;">
-                <h4> Encoding of Grades Schedule from <b style="color:red;"><br>
-                        <!-- October 22, 2018 to October 26, 2018 -->
-                    <?php  //echo date('M d, Y', strtotime($this->session->userdata('date_start'))) ?>
-                    June 11, 2019 to June 25, 2019 (College taking a Summer classes)<br>   
-                    June 14, 2019 to June 16, 2019 (SOL taking a 2nd Semester classes)   
-                    <!-- March 18, 2019 to March 20, 2019 (Graduating Students)   -->
-                    <!-- April 02, 2018 to April 06, 2018 (Non-Graduating Students)  -->
-                    <!-- April 02, 2018 to April 04, 2018 (HSU) and
-                    <br>April 02, 2018 to April 09, 2018 (College) -->
-                <?php // echo date('M d, Y', strtotime($this->session->userdata('date_end'))) ?></b></h4>
-            <hr style="margin: 15px 0 20px 0;">
-
-                <!-- <h4>The Releasing of Grades Schedule is from <b style="color:red;">March 16, 2016 to March 17, 2017. </b></h4> -->
-                <!-- <h4>The Releasing of Grades Schedule for Non-Graduating Students is from <b style="color:red;">April 3-5, 2017 10:00 AM onwards. </b></h4> -->
-
+                <h4> Encoding of Grades Schedule from <b style="color:#a50909;">
+                    November 11, 2019 to November 15, 2019
+                </b>
+                <br>    The Releasing of Grades Schedule is from  <b style="color:#a50909;">November 18, 2019 to November 20, 2019</b> (HSU & Tertiary)   
+                </h4>
+                    
             </div>
         </div>
     </div>
@@ -64,7 +92,7 @@
                             <!-- <small>(HSU and COLLEGE)</small> -->
                         </h3>
                         <div style="color:red; font-weight:bold;" class="text-center">
-                            <p><strong>Schedules</strong></p>
+                            <!-- <p><strong>Schedules</strong></p> -->
                         <?php
                            // $late_date = date('Y-m-d', strtotime($this->session->userdata('EogLateDate')));
                             //$first_date = date('F j, Y', strtotime($this->session->userdata('date_start')));
@@ -76,10 +104,10 @@
                             //echo "<br>College - April 2, 2018 to April 9, 2018";
                        // echo "March 18, 2019 to March 20, 2019 (Graduating Students) <br>March 20, 2019 to March 22, 2019 <br>(HSU for Grade 12)";
                         ?>
-                        June 11, 2019 to June 25, 2019 <br>(College taking a Summer classes)<br>
-                        June 14, 2019 to June 16, 2019 (SOL taking a 2nd Semester classes)   
+                       <!--  June 11, 2019 to June 25, 2019 <br>(College taking a Summer classes)<br>
+                        June 14, 2019 to June 16, 2019 (SOL taking a 2nd Semester classes)    -->
 
-                            <br>(
+                            <!-- <br>( -->
                            <?php //if (date('Y-m-d') == '2017-03-18' || date('Y-m-d') == '2017-03-19'): ?>
                             <!-- 12:01 am to 11:00 pm -->
                             <!-- until 11:00 PM -->
@@ -92,9 +120,9 @@
 
                            <?php// endif ?>
                            
-                            07:00 AM to 11:59 PM
+                           <!--  07:00 AM to 11:59 PM
                             )
-
+ -->
                         <?php if ($this->session->userdata('system_maintenance')): ?>
                             <?php echo $this->session->userdata('message') ?>
                         <?php endif ?>

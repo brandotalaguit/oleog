@@ -5,28 +5,7 @@
         
 
 <div class="container">
-    <div class="col-md-8">
-        <div class="col-md-12 vidlog">
-            <h4>ONLINE ENCODING OF GRADES</h4>
-            <p><?php echo $this->session->userdata('sem_desc').', A.Y. '.$this->session->userdata('sy_desc'); ?></p>
-            <hr style="margin: 15px 0 20px 0;">
-            <div class="responsive-video">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/43FonNXZE6I"></iframe>
-                </div>
-            </div>
-            <div  style="margin:20px auto;">
-                <!-- <h4><?php //echo $this->session->userdata('sem_code').', A.Y.'.$this->session->userdata('sy_desc'); ?></h4>
-                <hr style="margin:0px;">
-                <h4> Encoding of Grades Schedule from <b style="color:red;"><?php //echo date('M d, Y', strtotime($this->session->userdata('date_start'))) ?> to <?php //echo date('M d, Y', strtotime($this->session->userdata('date_end'))) ?></b></h4> -->
-            <hr style="margin: 15px 0 20px 0;">
-
-                <h4>The Releasing of Grades Schedule is from <b style="color:red;">October 24, 2016 to October 28, 2016. </b></h4>
-            </div>            
-        </div>
-    </div>
-
-    <div class="col-md-4">
+    <div class="col-md-offset-4 col-md-4">
                <!--Reg Block-->
             <?php echo $form_url ?>
             <div class="reg-block">
@@ -44,7 +23,7 @@
                             $late_date = date('Y-m-d', strtotime($this->session->userdata('EogLateDate'))); 
 
                             $first_date = date('F j, Y', strtotime($this->session->userdata('date_start'))); 
-                            $last_date = date('F j, Y', strtotime('-1 day', strtotime($this->session->userdata('date_end')))); 
+                            $last_date = date('F j, Y', strtotime($this->session->userdata('date_end'))); 
 
                             echo $first_date . ' to ' . $last_date;
                         ?> 
@@ -134,4 +113,5 @@
             <!--End Reg Block-->
             <?php echo form_close(); ?>
     </div>
+    <div class="clearfix"></div>
 </div>

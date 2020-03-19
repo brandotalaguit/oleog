@@ -90,6 +90,7 @@ class Schedule_M extends MY_Model
 	{
 		// Teaching Load
 		$column = array(
+				'tbleogtrans.sched_id as eogSchedId',
 				'tbleogtrans.updated_at',
 				'tbleogtrans.submitted_at',
 				'(
@@ -105,30 +106,30 @@ class Schedule_M extends MY_Model
 		$this->db->select($column, FALSE);
 		$this->db->order_by('Year, Section, CourseCode');
 
-		if ($faculty_id == 516)
-		{
-			// $this->db->where_in('tblsched.cfn', array('A1167280','A1167130','A1166387'));
-			return parent::get_by(array(
-				'tblsched.sched_id' => 13265,
-				'tblsched.faculty_id' => $faculty_id
-			));
-		}
+		// if ($faculty_id == 516)
+		// {
+		// 	// $this->db->where_in('tblsched.cfn', array('A1167280','A1167130','A1166387'));
+		// 	return parent::get_by(array(
+		// 		'tblsched.sched_id' => 13265,
+		// 		'tblsched.faculty_id' => $faculty_id
+		// 	));
+		// }
 
-		if ($faculty_id == 1042)
-		{
-			return parent::get_by(array(
-				'tblsched.sched_id' => 13342,
-				'tblsched.faculty_id' => $faculty_id
-			));
-		}
+		// if ($faculty_id == 1042)
+		// {
+		// 	return parent::get_by(array(
+		// 		'tblsched.sched_id' => 13342,
+		// 		'tblsched.faculty_id' => $faculty_id
+		// 	));
+		// }
 
-		if ($faculty_id == 1033)
-		{
-			return parent::get_by(array(
-				'tblsched.sched_id' => 14902,
-				'tblsched.faculty_id' => $faculty_id
-			));
-		}
+		// if ($faculty_id == 1033)
+		// {
+		// 	return parent::get_by(array(
+		// 		'tblsched.sched_id' => 14902,
+		// 		'tblsched.faculty_id' => $faculty_id
+		// 	));
+		// }
 
 		return parent::get_by(array(
 			'tblsched.SyId' => $sy_id,

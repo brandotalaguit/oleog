@@ -19,7 +19,7 @@ class Hsu_stat extends Admin_Controller {
 		$faculty = $this->user_m->get_by(array('faculty_id' => $this->session->userdata('faculty_id')), TRUE);
 		$this->data['college'] = $this->db->get_where('tblcollege', array('CollegeId' => $faculty->CollegeId))->row();
 
-		$param = array('SemId' => 2, 'SyId' => 7, 'C.CollegeId' => $faculty->CollegeId);
+		$param = array('SemId' => 1, 'SyId' => 9, 'C.CollegeId' => $faculty->CollegeId);
 
 		$college = $this->studgrade_stat_m->faculty_encoding_statistics($param);
 		$hsu = $this->studgrade_stat_hsu_m->faculty_encoding_statistics($param);
@@ -57,7 +57,7 @@ class Hsu_stat extends Admin_Controller {
 
 	public function on_time_encode($faculty_id = 0)
 	{
-		$this->output->enable_profiler(TRUE);
+		// $this->output->enable_profiler(TRUE);
 
 		$sy_id = $this->session->userdata('sy_id');
 		$sem_id = $this->session->userdata('sem_id');
@@ -65,7 +65,8 @@ class Hsu_stat extends Admin_Controller {
 
 		!$faculty_id || $this->db->where('B.faculty_id', $faculty_id);
 
-		$this->db->where('submitted_at <=', $late_date);
+		$this->db->where('submitted_at <= ', $late_date);
+		$this->db->where('! (submitted_at = 0 || submitted_at IS NULL)', NULL, FALSE);
 		$this->data['courses'] = $this->studgrade_stat_hsu_m->get_course($sy_id, $sem_id);
 		$this->data['title'] = 'List of courses who encoded their grades on-time';
 
@@ -165,7 +166,7 @@ class Hsu_stat extends Admin_Controller {
 		$sy_id = $this->session->userdata('sy_id');
 
 		$sql_statement = "SELECT C.CollegeId, CollegeCode, CollegeDesc,  cfn,
-			subcode as CourseCode, REPLACE(subdes, ',', '') as CourseDesc, section as year_section, concat(Lastname, ' ', Firstname, ' ', Middlename) FacultyName, B.faculty_id, Lastname, Firstname, Middlename, submitted_at, DateSaveGradSection, remark,
+			subcode as CourseCode, REPLACE(subdes, ',', '') as CourseDesc, section as year_section, concat(Lastname, ' ', Firstname, ' ', Middlename) FacultyName, B.faculty_id, Lastname, Firstname, Middlename, regis_date_print, returned_date, submitted_at, remark,
 			(SELECT COUNT(F.student_id) FROM " . HSU_DB . ".student_schedules AS F
 	            LEFT JOIN " . HSU_DB . ".student_enrollments AS G ON G.stud_id = F.student_id AND G.is_actived = 1
 			    WHERE
@@ -208,8 +209,8 @@ class Hsu_stat extends Admin_Controller {
 		// $sy_id = $this->session->userdata('sy_id');
 		// $sem_id = $this->session->userdata('sem_id');
 
-		$sy_id = 7;
-		$sem_id = 2;
+		$sy_id = 9;
+		$sem_id = 1;
 
 		!$faculty_id || $this->db->where('B.faculty_id', $faculty_id);
 
